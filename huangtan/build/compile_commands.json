@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/boot",
+  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/boot.dir/boot.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c",
+  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c"
+}
+]

@@ -9,6 +9,7 @@
         "task.h": "c",
         "types.h": "c",
         "fcntl.h": "c",
-        "_default_fcntl.h": "c"
+        "_default_fcntl.h": "c",
+        "list.h": "c"
     },
 }
