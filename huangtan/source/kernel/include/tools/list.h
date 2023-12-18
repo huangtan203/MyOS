@@ -43,5 +43,5 @@ static inline list_t*list_last(list_t *list){
 void list_insert_first(list_t *list, list_node_t *node);
 void list_insert_last(list_t *list, list_node_t *node);
 list_node_t* list_remove_first(list_t *list);
-list_node_t* list_remove(list_t *list,list_node_t* node);
+list_node_t* list_remove(list_t *list,list_node_t* remove_node);
 #endif

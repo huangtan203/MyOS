@@ -1,0 +1,6 @@
+#include"comm/boot_info.h"
+#include"comm/cpu_instr.h"
+#include"cpu/cpu.h"
+#include"os_cfg.h"
+#include"dev/time.h"
+#include"cpu/irq.h"
