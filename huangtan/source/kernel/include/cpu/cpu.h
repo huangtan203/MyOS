@@ -16,6 +16,19 @@
 #define SEG_TYPE_DATA		(0 << 3)		// 数据段
 
 #define SEG_TYPE_RW			(1 << 1)		// 是否可写可读，不设置为只读
+
+#define GATE_TYPE_IDT       (0xE<<8)        //中断门描述符
+#define GATE_TYPE_SYSCALL   (0xC<<8)        //调用门描述符
+#define GATE_P_PRESENT      (1<<15)         //存在位
+#define GATE_DPL0           (0<<13)          //特权级
+#define GATE_DPL3           (3<<13)          //特权级
+
+#define SEG_RPL0			(0)				//特权级0
+#define SEG_RPL3			(3)				//特权级3
+
+#define EFLAGS_IF			(1 << 9)		//中断标志位
+#define EFLAGS_DEFAULT		(1 << 1)		
+
 #pragma pack(1)
 typedef struct _segment_desc_t{
     uint16_t limit15_0;

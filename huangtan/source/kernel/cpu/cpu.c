@@ -19,7 +19,7 @@ void segment_desc_set(int selctor, uint32_t base, uint32_t limit, uint16_t attr)
 }
 
 
-void gate_desc_set(gate_desc_set*dest, uint32_t base, uint16_t selctor, uint16_t attr){
+void gate_desc_set(gate_desc_t*dest, uint16_t selctor,uint32_t offset, uint16_t attr){
     dest->offset15_0=offset&0xffff;
     dest->selctor=selctor;
     dest->attr=attr;
