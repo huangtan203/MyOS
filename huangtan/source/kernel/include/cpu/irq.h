@@ -30,6 +30,16 @@
 
 #define ERR_EXT (1<<0)
 #define ERR_IDT (1<<1)
+
+typedef struct _exception_frame_t{
+    int gs,fs,es,ds;
+    int edi,esi,ebp,esp,ebx,edx,ecx,eax;
+    int num;
+    int err_code;
+    int eip,cs,eflags;
+    int esp3,ss3;
+}exception_frame_t;
+typedef void (*irq_handler_t)(void);
 void irq_init(void);
 int irq_install(int irq_num,irq_handler_t handler);
 void exception_handler_unknown(void);
