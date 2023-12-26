@@ -36,8 +36,8 @@ typedef struct _exception_frame_t{
     int edi,esi,ebp,esp,ebx,edx,ecx,eax;
     int num;
     int err_code;
-    int eip,cs,eflags;
-    int esp3,ss3;
+    int eip,cs,eflags;//eip和cs，eflags也是硬件自动压入的寄存器
+    int esp3,ss3;//这里指的是3特权级的栈指针 硬件自动压入的
 }exception_frame_t;
 typedef void (*irq_handler_t)(void);
 void irq_init(void);

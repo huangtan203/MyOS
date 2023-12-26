@@ -38,7 +38,7 @@ _start:
     iret
 .endm
 
-exception_handler unknown,-1,0
+exception_handler unknown,-1,0//怎么还有负数
 exception_handler driver,0,0
 exception_handler Debug,1,0
 exception_handler NMI,2,0

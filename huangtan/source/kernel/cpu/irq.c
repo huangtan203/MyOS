@@ -15,7 +15,18 @@ static void dump_core_regs(exception_frame_t*frame){
         ss=frame->ss3;
         esp=frame->esp3;
     }
-    
+    log_printf("IRQ:%d,error code:%d.",frame->num,frame->err_code);
+    log_printf("CS:%d\nDS:%d\nES:%d\nSS:%d\nFS:%d\nGS:%d",frame->cs,frame->ds,frame->es,frame->ss,frame->fs,frame->gs);
+    log_printf("EAX:0x%x\n",frame->eax);
+    log_printf("EBX:0x%x\n",frame->ebx);
+    log_printf("ECX:0x%x\n",frame->ecx);
+    log_printf("EDX:0x%x\n",frame->edx);
+    log_printf("ESI:0x%x\n",frame->esi);
+    log_printf("EDI:0x%x\n",frame->edi);
+    log_printf("EBP:0x%x\n",frame->ebp);
+    log_printf("ESP:0x%x\n",esp);
+    log_printf("EIP:0x%x\n",frame->eip);
+    log_printf("EFLAGS:0x%x\n",frame->eflags);
 }
 static void do_default_handler(exception_frame_t*frame,const char*message){
     log_printf("----------------");
@@ -26,6 +37,119 @@ static void do_default_handler(exception_frame_t*frame,const char*message){
     for(;;){
         hlt();
     }
+}
+void do_handler_unknown(exception_frame_t*frame){
+    do_default_handler(frame,"Unknown exception happend.");
+}
+void do_handler_driver(exception_frame_t*frame){
+    do_default_handler(frame,"Driver exception happend.");
+}
+void do_handler_Debug(exception_frame_t*frame){
+    do_default_handler(frame,"Debug exception happend.");
+}
+void do_handler_NMI(exception_frame_t*frame){
+    do_default_handler(NULL,"NMI exception happend.");
+}
+void do_handler_breakpoint(exception_frame_t*frame){
+    do_default_handler(frame,"Breakpoint exception happend.");
+}
+void do_handler_overflow(exception_frame_t*frame){
+    do_default_handler(frame,"Overflow exception happend.");
+}
+void do_handler_bound_range(exception_frame_t*frame){
+    do_default_handler(frame,"Bound range exception happend.");
+}
+void do_handler_invalid_opcode(exception_frame_t*frame){
+    do_default_handler(frame,"Invalid opcode exception happend.");
+}
+void do_handler_device_unavailable(exception_frame_t*frame){
+    do_default_handler(frame,"Device unavailable exception happend.");
+}
+void do_handler_double_fault(exception_frame_t*frame){
+    do_default_handler (frame,"Double fault exception happend.");
+}
+void do_handler_invalid_tss(exception_frame_t*frame){
+    do_default_handler(frame,"Invalid TSS exception happend.");
+}
+void do_handler_segment_not_present(exception_frame_t*frame){
+    do_default_handler(frame,"Segment not present exception happend.");
+}
+void do_handler_stack_segment_fault(exception_frame_t*frame){
+    do_default_handler(frame,"Stack segment fault exception happend.");
+}
+void do_handler_general_protection(exception_frame_t*frame){
+
+    log_printf("---------------------------");
+    log_printf("IRQ/Exception happened:General Protection");
+    do_default_handler(frame,"General protection exception happend.");
+    /*
+        位0：外部或内部源选择（0为内部源，1为外部源）。
+        位1-2：表明导致异常的段选择子的描述符类型（0表示数据段，1表示代码段，2表示任务门描述符）。
+        位3-4：表明访问段或门时的特权级（CPL）。
+        位5：段描述符的存储（0为局部描述符表（LDT），1为全局描述符表（GDT））。
+        位6-15：段或门选择子索引。
+    */
+    if(frame->error_code & ERR_EXT){
+        log_printf("the exception occurred during delivery of an "
+                "event external to the program, such as an interrupt"
+                "or an earlier exception.");
+    }else{
+        log_printf("the exception occurred during delivery of a"
+                    "software interrupt (INT n, INT3, or INTO).");
+    }
+    if (frame->error_code & ERR_IDT) {
+        log_printf("the index portion of the error code refers "
+                    "to a gate descriptor in the IDT");
+    } else {
+        log_printf("the index refers to a descriptor in the GDT");
+    }
+    log_printf("segment index: %d", frame->error_code & 0xFFF8);
+    dump_core_regs(frame);
+    while(1){
+        hlt();
+    }
+}
+void do_handler_page_fault(exception_frame_t*frame){
+    log_printf("--------------------------------");
+    log_printf("IRQ/Exception happend: Page fault.");
+    if (frame->error_code & ERR_PAGE_P) {
+        log_printf("\tpage-level protection violation: 0x%x.", read_cr2());
+    } else {
+         log_printf("\tPage doesn't present 0x%x", read_cr2());
+   }
+    
+    if (frame->error_code & ERR_PAGE_WR) {
+        log_printf("\tThe access causing the fault was a read.");
+    } else {
+        log_printf("\tThe access causing the fault was a write.");
+    }
+    
+    if (frame->error_code & ERR_PAGE_US) {
+        log_printf("\tA supervisor-mode access caused the fault.");
+    } else {
+        log_printf("\tA user-mode access caused the fault.");
+    }
+
+    dump_core_regs(frame);
+    while (1) {
+        hlt();
+    }
+}
+}
+void do_handler_fpu_error(exception_frame_t*frame){
+    do_default_handler(frame,"FPU error exception happend.");
+}
+void do_handler_alignment_check(exception_frame_t*frame){
+    do_default_handler(frame,"Alignment check exception happend.");
+}
+void do_handler_machine_check(exception_frame_t*frame){
+    do_default_handler(frame,"Machine check exception happend.");
+}
+void do_handler_smd_exception(exception_frame_t*frame){
+    do_default_handler(frame,"SMD exception happend.");
+}
+void do_handler_virtual_exception(exception_frame_t*frame){
+    do_default_handler(frame,"Virtual exception happend.");
 }
 static void init_pic(void){
     outb(PIC0_ICW1, PIC_ICW1_ALWAYS_1 | PIC_ICW1_ICW4);
@@ -76,28 +200,28 @@ void irq_init(){
     //安装中断描述符
     //如果不需要借助栈段传参的话可以直接安装在idt表中
     for(int i=0;i<IDT_TABLE_NR;i++){
-        gate_desc_set(idt_table+i,KERNEL_SELECTOR_CS,(uint32_t)exception_handler_unknown, 
+        gate_desc_set(idt_table+i,KERNEL_SELECTOR_CS,(uint32_t)do_handler_unknown, 
             GATE_P_PRESENT|GATE_DPL0|GATE_TYPE_IDT);
     }
-    irq_install(IRQ0_DE,exception_handler_driver);
-    irq_install(IRQ1_DB,exception_handler_Debug);
-    irq_install(IRQ2_NMI,exception_handler_NMI);
-    irq_install(IRQ3_BP,exception_handler_breakpoint);
-    irq_install(IRQ4_OF,exception_handler_overflow);
-    irq_install(IRQ5_BR,exception_handler_bound_range);
-    irq_install(IRQ6_UD,exception_handler_invalid_opcode);
-    irq_install(IRQ7_NM,exception_handler_device_unavailable);
-    irq_install(IRQ8_DF,exception_handler_double_fault);
-    irq_install(IRQ10_TS,exception_handler_invalid_tss);
-    irq_install(IRQ11_NP,exception_handler_segment_not_present);
-    irq_install(IRQ12_SS,exception_handler_stack_segment_fault);
-    irq_install(IRQ13_GP,exception_handler_general_protection);
-    irq_install(IRQ14_PF,exception_handler_page_fault);
-    irq_install(IRQ16_MF,exception_handler_fpu_error); 
-    irq_install(IRQ17_AC,exception_handler_alignment_check);
-    irq_install(IRQ18_MC,exception_handler_machine_check);
-    irq_install(IRQ19_XM,exception_handler_smd_exception);
-    irq_install(IRQ20_VE,exception_handler_virtual_exception);
+    irq_install(IRQ0_DE,do_handler_driver);
+    irq_install(IRQ1_DB,do_handler_Debug);
+    irq_install(IRQ2_NMI,do_handler_NMI);
+    irq_install(IRQ3_BP,do_handler_breakpoint);
+    irq_install(IRQ4_OF,do_handler_overflow);
+    irq_install(IRQ5_BR,do_handler_bound_range);
+    irq_install(IRQ6_UD,do_handler_invalid_opcode);
+    irq_install(IRQ7_NM,do_handler_device_unavailable);
+    irq_install(IRQ8_DF,do_handler_double_fault);
+    irq_install(IRQ10_TS,do_handler_invalid_tss);
+    irq_install(IRQ11_NP,do_handler_segment_not_present);
+    irq_install(IRQ12_SS,do_handler_stack_segment_fault);
+    irq_install(IRQ13_GP,do_handler_general_protection);
+    irq_install(IRQ14_PF,do_handler_page_fault);
+    irq_install(IRQ16_MF,do_handler_fpu_error); 
+    irq_install(IRQ17_AC,do_handler_alignment_check);
+    irq_install(IRQ18_MC,do_handler_machine_check);
+    irq_install(IRQ19_XM,do_handler_smd_exception);
+    irq_install(IRQ20_VE,do_handler_virtual_exception);
     lidt((uint32_t)idt_table,sizeof(idt_table);
     init_pic();
 }
