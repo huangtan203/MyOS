@@ -57,7 +57,7 @@ static uint32_t reload_elf_file(uint8_t*file_buffer){
         for(int j=0;j<phdr->p_filesz;j++){
             *dest_addr++=*src_addr++;
         }
-        dest=(uint8_t*)phdr->p_paddr+phdr->p_filesz;
+        dest_addr=(uint8_t*)phdr->p_paddr+phdr->p_filesz;
         for(int j=0;j<phdr->p_memsz-phdr->p_filesz;j++){
             *dest_addr++=0;
         }
@@ -68,10 +68,10 @@ static uint32_t reload_elf_file(uint8_t*file_buffer){
 static void die(){
     for(;;){}
 }
-void loader_kernel(void){
+void load_kernel(void){
     //读取磁盘
-    read_disk(100,500,(uint8_t*(SYS_KERNEL_LOAD_ADDR)));
-    uint32_t kernel_entry=reload_elf_file((uint8_t*(SYS_KERNEL_LOAD_ADDR)));
+    read_disk(100,500,(uint8_t*)SYS_KERNEL_LOAD_ADDR);
+    uint32_t kernel_entry=reload_elf_file((uint8_t*)SYS_KERNEL_LOAD_ADDR);
     if(kernel_entry==0){
         die(-1);
     }

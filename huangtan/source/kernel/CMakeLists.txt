@@ -9,8 +9,8 @@ file(GLOB C_LIST "*.c" "*.h")
 add_executable(${PROJECT_NAME} init/start.S ${C_LIST})
 add_custom_command(TARGET ${PROJECT_NAME} 
                     POST_BUILD 
-                    COMMAND ${OBJCOPY_TOOL} -S ${PROJECT_NAME}.elf ${PROJECT_SOURCE_DIR}/../../image/${PROJECT_NAME}.elf
-                    COMMAND ${OBJDUMP_TOOL} -x -d -S -m i8086 ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.elf > ${PROJECT_NAME}_dis.txt 
+                    COMMAND ${OBJCOPY_TOOL} -S ${PROJECT_NAME}.elf ${CMAKE_SOURCE_DIR}/../../image/${PROJECT_NAME}.elf
+                    COMMAND ${OBJDUMP_TOOL} -x -d -S -m i386 ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.elf > ${PROJECT_NAME}_dis.txt
                     COMMAND ${READELF_TOOL} -a ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.elf > ${PROJECT_NAME}_elf.txt)
 #在CMake中，默认情况下，以下几个目录变量具有以下默认值：
 #PROJECT_SOURCE_DIR`：默认情况下，它指向包含CMakeLists.txt文件的目录，即项目的根目录。

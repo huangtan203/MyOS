@@ -3,7 +3,7 @@
 
 __asm__(".code16gcc");
 #include "loader.h"
-boot_intfo_t boot_info;
+boot_info_t boot_info;
 /*使用汇编方式输出字符串
     section .data
     hello db 'Hello, World!', 0
@@ -29,14 +29,15 @@ boot_intfo_t boot_info;
         */
 static void show_msg(const char*msg){
     
-    char *c=msg
+    const char *c=msg;
     while(*c){
-        __asm__ __volatile__("mov %0xe, %%ah\n\t"
+        __asm__ __volatile__("mov $0xe, %%ah\n\t"
                              "mov %[ch], %%al\n\t"
-                             "int $0x10"::[ch]"r"(c));
+                             "int $0x10"::[ch]"r"(*c));
         c++;
     }
 }
+
 //参考如下链接进行内存检测 https://wiki.osdev.org/Detecting_Memory_(x86)#BIOS_Function:_INT_0x15.2C_AH_.3D_0xC7
 /*
 // load memory map to buffer - note: regparm(3) avoids stack issues with gcc in real mode
@@ -88,7 +89,7 @@ static void detece_momery(void){
     show_msg("Detecting memory map...");
     boot_info.ram_region_count=0;
     for(int i=0;i<BOOT_RAM_REGION_MAX;i++){
-        SMAP_entry_t* entry=&smap_entry;
+        SAMP_entry_t* entry=&smap_entry;
         __asm__ __volatile__ ("int  $0x15" 
 				: "=a"(signature), "=c"(bytes), "=b"(contID)
 				: "a"(0xE820), "b"(contID), "c"(24), "d"(0x534D4150), "D"(entry));
@@ -101,9 +102,9 @@ static void detece_momery(void){
         if(bytes>20&&(entry->ACPI&0x01)==0){
             continue;
         }
-        if(entry->type==1){
-            boot_info.ram_rigion_cfg[boot_info.ram_region_count].start=entry->BaseL;
-            boot_info.ram_rigion_cfg[boot_info.ram_region_count].start=entry->LengthL;
+        if(entry->Type==1){
+            boot_info.ram_region_cfg[boot_info.ram_region_count].start=entry->BaseL;
+            boot_info.ram_region_cfg[boot_info.ram_region_count].start=entry->LengthL;
             boot_info.ram_region_count++;
             
         }
@@ -112,7 +113,7 @@ static void detece_momery(void){
         }
     }
     show_msg("done.\r\n");
-    show_msg("RAM regions: %d\r\n",boot_info.ram_region_count);
+    //show_msg("RAM regions: %d\r\n",boot_info.ram_region_count);
 }
 uint16_t gdt_table[][4]={
     {0,0,0,0},
@@ -125,7 +126,7 @@ static void enter_protect_mode()
     //开启A20中线使得可以访问1M以上的地址
     uint8_t v=inb(0x92);
     outb(0x92,v|2);
-    lgdt((uint32_t)gdt_table,sizeof(gdt_table);
+    lgdt((uint32_t)gdt_table,sizeof(gdt_table));
     //打开保护模式
     uint32_t cr0=read_cr0();
     write_cr0(cr0|1<<0);

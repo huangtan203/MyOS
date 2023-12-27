@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../source/comm/boot_info.h
+types.h
+../source/comm/types.h
+
+../source/comm/cpu_instr.h
+types.h
+../source/comm/types.h
+
+../source/comm/elf.h
+
+../source/comm/types.h
+
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader.h
+comm/types.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/comm/types.h
+comm/boot_info.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/comm/boot_info.h
+comm/cpu_instr.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/comm/cpu_instr.h
+
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_16.c
+loader.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader.h
+
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_32.c
+loader.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader.h
+comm/elf.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/comm/elf.h
+

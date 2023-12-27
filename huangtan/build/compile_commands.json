@@ -1,7 +1,17 @@
 [
 {
   "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/boot",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/boot.dir/boot.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c",
+  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/boot.dir/boot.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c",
   "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c"
+},
+{
+  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader",
+  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_16.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_16.c",
+  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_16.c"
+},
+{
+  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader",
+  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_32.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_32.c",
+  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_32.c"
 }
 ]

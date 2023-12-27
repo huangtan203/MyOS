@@ -1,7 +1,8 @@
 #ifndef LOADER_H
 #define LOADER_H
-#include"comm/boot_info.h"
-#include"comm/tyepes.h"
+#include "comm/types.h"
+#include "comm/boot_info.h"
+#include "comm/cpu_instr.h"
 void protect_mode_entry(void);
 extern boot_info_t boot_info;
 //内存检测信息结构

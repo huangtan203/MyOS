@@ -23,9 +23,6 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -83,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel/CMakeFiles/progress.marks
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/clean
 .PHONY : clean
 
 # The main clean target
@@ -100,44 +97,42 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named boot
+# Convenience name for target.
+source/kernel/CMakeFiles/kernel.dir/rule:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/CMakeFiles/kernel.dir/rule
+.PHONY : source/kernel/CMakeFiles/kernel.dir/rule
 
-# Build rule for target.
-boot: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 boot
-.PHONY : boot
+# Convenience name for target.
+kernel: source/kernel/CMakeFiles/kernel.dir/rule
 
-# fast build rule for target.
-boot/fast:
-	$(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/build
-.PHONY : boot/fast
-
-#=============================================================================
-# Target rules for targets named loader
-
-# Build rule for target.
-loader: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 loader
-.PHONY : loader
+.PHONY : kernel
 
 # fast build rule for target.
-loader/fast:
-	$(MAKE) -f source/loader/CMakeFiles/loader.dir/build.make source/loader/CMakeFiles/loader.dir/build
-.PHONY : loader/fast
+kernel/fast:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/build
+.PHONY : kernel/fast
+
+init/start.obj: init/start.S.obj
+
+.PHONY : init/start.obj
+
+# target to build an object file
+init/start.S.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/start.S.obj
+.PHONY : init/start.S.obj
 
 # Help Target
 help:
@@ -147,8 +142,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... boot"
-	@echo "... loader"
+	@echo "... kernel"
+	@echo "... init/start.obj"
 .PHONY : help
 
 
@@ -160,6 +155,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

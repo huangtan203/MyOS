@@ -9,6 +9,11 @@ static inline uint8_t inb(uint16_t port){
     //"a"表示将结果存储在寄存器EAX
     return ret;
 }
+static inline uint16_t inw(uint16_t port){
+    uint16_t ret;
+    __asm__ __volatile__("in %1, %0" : "=a" (ret) : "dN" (port));
+    return ret;
+}
 static inline void outb(uint16_t port, uint8_t val){
     __asm__ __volatile__("outb %[v],%[p]" : : [v]"a"(val), [p]"d"(port));
 }
@@ -101,7 +106,7 @@ static inline void write_eflags(uint32_t val){
 static inline void far_jump(uint32_t selector,uint32_t offset){
     uint32_t addr[]={offset,selector};
     //*(%[a])：这是一个间接寻址（indirect addressing）表达式。*表示要跳转到寻址结果指向的地址。(%[a])表示使用变量 a 的值作为内存地址进行间接寻址
-    __asm__ __volatile__("ljmp *(%[a])" : : [a]"r"(addr));
+    __asm__ __volatile__("ljmpl *(%[a])" : : [a]"r"(addr));
 }
     
 

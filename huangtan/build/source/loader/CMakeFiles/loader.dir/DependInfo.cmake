@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
-  "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/start.S" "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/boot/CMakeFiles/boot.dir/start.S.obj"
+  "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/start.S" "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader/CMakeFiles/loader.dir/start.S.obj"
   )
 set(CMAKE_ASM_COMPILER_ID "GNU")
 
@@ -15,7 +15,8 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../source/kernel/include"
   )
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c" "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/boot/CMakeFiles/boot.dir/boot.c.obj"
+  "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_16.c" "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader/CMakeFiles/loader.dir/loader_16.c.obj"
+  "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_32.c" "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader/CMakeFiles/loader.dir/loader_32.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

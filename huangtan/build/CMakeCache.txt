@@ -170,6 +170,18 @@ boot_BINARY_DIR:STATIC=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huang
 boot_SOURCE_DIR:STATIC=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot
 
 //Value Computed by CMake
+kernel_BINARY_DIR:STATIC=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel
+
+//Value Computed by CMake
+kernel_SOURCE_DIR:STATIC=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel
+
+//Value Computed by CMake
+loader_BINARY_DIR:STATIC=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader
+
+//Value Computed by CMake
+loader_SOURCE_DIR:STATIC=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader
+
+//Value Computed by CMake
 os_BINARY_DIR:STATIC=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build
 
 //Value Computed by CMake
@@ -263,7 +275,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

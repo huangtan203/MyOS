@@ -11,6 +11,21 @@ _start:
     jmp $KERNEL_SELECTOR_CS,$gdt_reload
 
 
+gdt_reload:
+    mov $KERNEL_SELECTOR_DS,%ax
+    mov %ax,%ds
+    mov %ax,%es
+    mov %ax,%fs
+    mov %ax,%gs
+    mov %ax,%ss
+
+    mov $(stack+KERNEL_STACK_SIZE),%esp
+
+    jmp init_main
+
+    .bss
+.comm stack,KERNEL_STACK_SIZE
+
     .text
 .macro exception_handler name num with_error_code
     .extern do_handler_\name

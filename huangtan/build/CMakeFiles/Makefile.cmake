@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.5.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeSystem.cmake"
   "../source/boot/CMakeLists.txt"
+  "../source/loader/CMakeLists.txt"
   "/usr/share/cmake-3.5/Modules/CMakeASMInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCommonLanguageInclude.cmake"
@@ -35,9 +36,11 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "source/boot/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "source/loader/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "source/boot/CMakeFiles/boot.dir/DependInfo.cmake"
+  "source/loader/CMakeFiles/loader.dir/DependInfo.cmake"
   )

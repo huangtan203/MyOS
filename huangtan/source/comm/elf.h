@@ -15,7 +15,7 @@ typedef uint32_t Elf32_Word;
 #define PT_LOAD 1 //可加载类型
 //https://ciphersaw.me/ctf-wiki/executable/elf/elf_structure/
 typedef struct{
-    char e_ident[EI_INDENT]; //前四个字节魔数0x7f表示elf
+    char e_ident[EI_NIDENT]; //前四个字节魔数0x7f表示elf
     Elf32_Half e_type;
     Elf32_Half e_machine;
     Elf32_Word e_version; //目标文件的版本
@@ -40,5 +40,5 @@ typedef struct{
     Elf32_Word p_flags;//与段相关的标记
     Elf32_Word p_align;//对齐
 }Elf32_Phdr;//程序头表
-#pragma pack(S)
+#pragma pack()
 #endif
