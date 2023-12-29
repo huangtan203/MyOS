@@ -22,7 +22,7 @@ void setupTimerInterrupt() {
 
 #include "dev/time.h"
 #include "cpu/irq.h"
-#include "comm/cpu_isnstr.h"
+#include "comm/cpu_instr.h"
 #include "os_cfg.h"
 
 
@@ -35,10 +35,10 @@ void do_handler_timer(exception_frame_t *frame){
 static void init_pit(void){
     uint32_t reload_count=(PIT_OSC_FREQ/(1000.0/OS_TICK_MS)); //每十毫秒tick++
     outb(PIT_COMMAND_MODE_PORT, PIT_CHANNEL0|PIT_LOAD_LOHI|PIT_MODE0); 
-    outb(PIT_CHANNLE0_DATA_PORT,reload_count&0xff);
-    outb(PIT_CHANNLE0_DATA_PORT,(reload_count>>8)&0xff);
+    outb(PIT_CHANNEL0_DATA_PORT,reload_count&0xff);
+    outb(PIT_CHANNEL0_DATA_PORT,(reload_count>>8)&0xff);
 
-    irq_install_handler(IRQ0_TIMER, do_handler_timer);
+    irq_install(IRQ0_TIMER, (irq_handler_t)exception_handler_timer);
     irq_enable(IRQ0_TIMER);
 }
 

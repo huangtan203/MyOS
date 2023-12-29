@@ -1,6 +1,6 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
-#inlcude "comm/types.h"
+#include "comm/types.h"
 
 #define CONSOLE_VIDEO_BASE 0Xb8000
 #define CONSOLE_DISP_ADDR 0XB8000

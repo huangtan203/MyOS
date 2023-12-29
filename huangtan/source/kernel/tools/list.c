@@ -51,7 +51,7 @@ list_node_t* list_remove_first(list_t *list){
     remove_node->next=(list_node_t*)0;
     remove_node->prev=(list_node_t*)0;
     list->count--;
-    return remove_node
+    return remove_node;
 }
 list_node_t* list_remove(list_t *list,list_node_t* remove_node){
     if(list_is_empty(list) ) return (list_node_t*)0;
@@ -64,16 +64,16 @@ list_node_t* list_remove(list_t *list,list_node_t* remove_node){
     }
     else if(next==(list_node_t*)0){
         list->last=prev;
-        pre->next=(list_node_t*)0;
-        list_count--;
+        prev->next=(list_node_t*)0;
+        list->count--;
     }else if(prev==(list_node_t*)0){
         list->first=next;
         next->prev=(list_node_t*)0;
-        list_count--;
+        list->count--;
     }else{
         next->prev=prev;
         prev->next=next;
-        list_count--;
+        list->count--;
     }
     remove_node->next=(list_node_t*)0;
     remove_node->prev=(list_node_t*)0;

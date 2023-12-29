@@ -1,6 +1,6 @@
 #include "cpu/irq.h"
 #include "cpu/cpu.h"
-#include "comm/cpu_isnstr.h"
+#include "comm/cpu_instr.h"
 #include "tools/log.h"
 #include "os_cfg.h"
 #define IDT_TABLE_NR 128
@@ -15,8 +15,8 @@ static void dump_core_regs(exception_frame_t*frame){
         ss=frame->ss3;
         esp=frame->esp3;
     }
-    log_printf("IRQ:%d,error code:%d.",frame->num,frame->err_code);
-    log_printf("CS:%d\nDS:%d\nES:%d\nSS:%d\nFS:%d\nGS:%d",frame->cs,frame->ds,frame->es,frame->ss,frame->fs,frame->gs);
+    log_printf("IRQ:%d,error code:%d.",frame->num,frame->error_code);
+    log_printf("CS:%d\nDS:%d\nES:%d\nSS:%d\nFS:%d\nGS:%d",frame->cs,frame->ds,frame->es,frame->ds,frame->fs,frame->gs);
     log_printf("EAX:0x%x\n",frame->eax);
     log_printf("EBX:0x%x\n",frame->ebx);
     log_printf("ECX:0x%x\n",frame->ecx);
@@ -48,7 +48,7 @@ void do_handler_Debug(exception_frame_t*frame){
     do_default_handler(frame,"Debug exception happend.");
 }
 void do_handler_NMI(exception_frame_t*frame){
-    do_default_handler(NULL,"NMI exception happend.");
+    do_default_handler(frame,"NMI exception happend.");
 }
 void do_handler_breakpoint(exception_frame_t*frame){
     do_default_handler(frame,"Breakpoint exception happend.");
@@ -135,7 +135,7 @@ void do_handler_page_fault(exception_frame_t*frame){
         hlt();
     }
 }
-}
+
 void do_handler_fpu_error(exception_frame_t*frame){
     do_default_handler(frame,"FPU error exception happend.");
 }
@@ -222,7 +222,7 @@ void irq_init(){
     irq_install(IRQ18_MC,do_handler_machine_check);
     irq_install(IRQ19_XM,do_handler_smd_exception);
     irq_install(IRQ20_VE,do_handler_virtual_exception);
-    lidt((uint32_t)idt_table,sizeof(idt_table);
+    lidt((uint32_t)idt_table,sizeof(idt_table));
     init_pic();
 }
 void irq_enable(int irq_num){
@@ -231,7 +231,7 @@ void irq_enable(int irq_num){
     }
     irq_num-=IRQ_PIC_START;
     if(irq_num<8){
-        uint8_t mask=inb(PIC0_TMR)&~(1<<irq_num);
+        uint8_t mask=inb(PIC0_IMR)&~(1<<irq_num);
         outb(PIC0_IMR,mask);
     }else{
         irq_num-=8;
@@ -246,7 +246,7 @@ void irq_disable(int irq_num){
     }
     irq_num-=IRQ_PIC_START;
     if(irq_num<8){
-        uint8_t mask=inb(PIC0_TMR)|(1<<irq_num);
+        uint8_t mask=inb(PIC0_IMR)|(1<<irq_num);
         outb(PIC0_IMR,mask);
     }else{
         irq_num-=8;

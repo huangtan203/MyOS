@@ -1,10 +1,10 @@
-#include "comm/cpu_isnstr.h"
+#include "comm/cpu_instr.h"
 #include "cpu/cpu.h"
 #include "os_cfg.h"
 
 static segment_desc_t gdt_table[GDT_TABLE_SIZE]; 
-void segment_desc_set(int selctor, uint32_t base, uint32_t limit, uint16_t attr){
-    segment_desc_t*desc=gdt_table+(selctor>>3);
+void segment_desc_set(int selector, uint32_t base, uint32_t limit, uint8_t attr){
+    segment_desc_t*desc=gdt_table+(selector>>3);
     if(limit>0xfffff){
         //长度太大改为4KB
         attr|=0x8000;
@@ -19,9 +19,9 @@ void segment_desc_set(int selctor, uint32_t base, uint32_t limit, uint16_t attr)
 }
 
 
-void gate_desc_set(gate_desc_t*dest, uint16_t selctor,uint32_t offset, uint16_t attr){
+void gate_desc_set(gate_desc_t*dest, uint32_t offset, uint16_t selector, uint8_t attr){
     dest->offset15_0=offset&0xffff;
-    dest->selctor=selctor;
+    dest->selector=selector;
     dest->attr=attr;
     dest->offset31_16=(offset>>16)&0xffff;
 }

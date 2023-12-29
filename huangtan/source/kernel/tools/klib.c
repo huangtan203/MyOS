@@ -1,5 +1,5 @@
 #include"tools/klib.h"
-#include"comm/cpu_isntr.h"
+#include"comm/cpu_instr.h"
 int strings_count(char**start){
     //字符串的数量
     int count=0;
@@ -31,7 +31,7 @@ void kernel_strcpy(char*dest,char*src){
     *dest='\0';
     return ;
 }
-void kernel_strncpy(char*dest,const char*src,int size){
+void kernel_strncpy(char*dest,char*src,int size){
     if(!dest||!src){
         return ;
     }
@@ -74,6 +74,7 @@ int kernel_strlen(const char*s){
 void kernel_strcat(char*dest,const char*src){
     if(!dest||!src){
         return ;
+    }
 
 }
 void kernel_memcpy(void*dest,void*src,int size){
@@ -104,6 +105,6 @@ void kernel_itoa(char*buf,int num,int base){
 void kernel_sprintf(char*buf,const char*fmt,...){
 
 }
-void kernel_vsprintf(char*buf,const char*fmt,va_list args){
+void kernel_vsprintf(char * buffer, const char * fmt, va_list args){
 
 }

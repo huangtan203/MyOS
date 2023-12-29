@@ -1,6 +1,6 @@
 #include "dev/console.h"
 #include "tools/klib.h"
-#include "comm/cpu_isnstr.h"
+#include "comm/cpu_instr.h"
 #define CONSOLE_NR 1
 static console_t console_buf[CONSOLE_NR]; 
 static int read_cursor_pos(){
@@ -16,15 +16,15 @@ static void erase_rows(console_t*console,int start,int end){
     int nr_bytes=console->display_cols*(end-start+1);
     disp_char_t*dest=console->disp_base+offset;
     for(int i=0;i<nr_bytes;i++){
-        dest[i]->c=' ';
-        dest[i]->foreground = console->foreground;
-        dest[i]->background = console->background;
+        dest[i].c=' ';
+        dest[i].foreground = console->foreground;
+        dest[i].background = console->background;
     }
 }
 static void scroll_up(console_t*console,int n){
     disp_char_t*dest=console->disp_base;
-    disp_char_t*src=console->disp_base+console->display_clos*n;
-    uint32_t size=console->display_clos*(console->cursor_row-n)*sizeof(disp_char_t);
+    disp_char_t*src=console->disp_base+console->display_cols*n;
+    uint32_t size=console->display_cols*(console->cursor_row-n)*sizeof(disp_char_t);
     kernel_memcpy(dest,src,size);
     erase_rows(console,console->display_rows-n,console->display_rows-1);
     console->cursor_row-=n;
@@ -41,7 +41,7 @@ static void move_next_line(console_t*console){
 static void move_forward(console_t*console,int n){
     for(int i=0;i<n;i++){
         console->cursor_col++;
-        if(console->cursor_col>=console->display_clos){
+        if(console->cursor_col>=console->display_cols){
             console->cursor_col=0;
             console->cursor_row++;
             if(console->cursor_row>=console->display_rows){
@@ -51,7 +51,7 @@ static void move_forward(console_t*console,int n){
     }
 }
 static void show_char(console_t*console,char c){
-    int offset=console->cursor_col+console->cursor_row*console->display_clos;
+    int offset=console->cursor_col+console->cursor_row*console->display_cols;
     disp_char_t*p=(disp_char_t*)(console->disp_base)+offset;
     p->c=c;
     p->foreground=console->foreground;
@@ -67,7 +67,7 @@ static int move_backword(console_t*console,int n){
         }else{
             if(console->cursor_row>0){
                 console->cursor_row--;
-                console->cursor_col=console->display_clos-1;
+                console->cursor_col=console->display_cols-1;
                 status=0;
             }
         }
@@ -75,7 +75,7 @@ static int move_backword(console_t*console,int n){
     return status;
 }
 static void clear_display(console_t*console){
-    int size=console->display_clos*console->display_rows;
+    int size=console->display_cols*console->display_rows;
     for(int i=0;i<size;i++){
         disp_char_t*p=(disp_char_t*)(console->disp_base)+i;
         p->c=' ';
@@ -86,11 +86,11 @@ static void clear_display(console_t*console){
 int console_init(void){
     for(int i=0;i<CONSOLE_NR;i++){
         console_buf[i].disp_base=(disp_char_t *)CONSOLE_DISP_ADDR;
-        console_buf[i].display_clos=CONSOLE_COL_MAX;
+        console_buf[i].display_cols=CONSOLE_COL_MAX;
         console_buf[i].display_rows=CONSOLE_ROW_MAX;
         int current_pos=read_cursor_pos();
-        console_buf[i].cursor_row=current_pos/console_buf[i].display_clos;
-        console_buf[i].cursor_col=current_pos%console_buf[i].display_clos;
+        console_buf[i].cursor_row=current_pos/console_buf[i].display_cols;
+        console_buf[i].cursor_col=current_pos%console_buf[i].display_cols;
         console_buf[i].old_cursor_col=console_buf[i].cursor_col;
         console_buf[i].old_cursor_row=console_buf[i].cursor_row;
         console_buf[i].foreground=COLOR_White;

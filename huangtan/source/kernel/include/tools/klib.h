@@ -5,7 +5,7 @@
 
 static inline uint32_t up2(uint32_t size,uint32_t bound){
     //当bound是2的整数次幂时 这两个值是相等的
-    return (size+bound-1)&~(bound-1)
+    return (size+bound-1)&~(bound-1);
     //return (size+bound-1)/bound*bound;
 }
 

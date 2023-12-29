@@ -1,4 +1,4 @@
-#include "comm/cpu_isnstr.h"
+#include "comm/cpu_instr.h"
 #include "tools/klib.h"
 #include "tools/log.h"
 #include "os_cfg.h"

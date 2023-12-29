@@ -12,11 +12,9 @@ void kernel_init(boot_info_t*boot_info){
     irq_init(); //初始化中断描述表
     time_init(); //始终初始化 准备计时
 }
-void init_main(){
-    for(;;){}
-}
 
-voit init_task_entry(void){
+
+void init_task_entry(void){
     int count=0;
     for(;;){
         log_printf("init task:%d",count++);
