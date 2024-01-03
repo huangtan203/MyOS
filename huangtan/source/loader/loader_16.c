@@ -134,7 +134,7 @@ static void enter_protect_mode()
     far_jump(8,(uint32_t)protect_mode_entry);
 }
 void loader_entry(void){
-    show_msg("Hello, World!\n");
+    show_msg("Hello, World!\r\n");
     detece_momery();
     enter_protect_mode();
     for(;;){}

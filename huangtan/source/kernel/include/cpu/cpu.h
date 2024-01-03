@@ -14,7 +14,7 @@
 
 #define SEG_TYPE_CODE		(1 << 3)		// 指定其为代码段
 #define SEG_TYPE_DATA		(0 << 3)		// 数据段
-
+#define SEG_TYPE_TSS        (9 << 0)
 #define SEG_TYPE_RW			(1 << 1)		// 是否可写可读，不设置为只读
 
 #define GATE_TYPE_IDT       (0xE<<8)        //中断门描述符

@@ -23,6 +23,9 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -125,6 +128,168 @@ kernel/fast:
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/build
 .PHONY : kernel/fast
 
+core/task.obj: core/task.c.obj
+
+.PHONY : core/task.obj
+
+# target to build an object file
+core/task.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.obj
+.PHONY : core/task.c.obj
+
+core/task.i: core/task.c.i
+
+.PHONY : core/task.i
+
+# target to preprocess a source file
+core/task.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.i
+.PHONY : core/task.c.i
+
+core/task.s: core/task.c.s
+
+.PHONY : core/task.s
+
+# target to generate assembly for a file
+core/task.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.s
+.PHONY : core/task.c.s
+
+cpu/cpu.obj: cpu/cpu.c.obj
+
+.PHONY : cpu/cpu.obj
+
+# target to build an object file
+cpu/cpu.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.obj
+.PHONY : cpu/cpu.c.obj
+
+cpu/cpu.i: cpu/cpu.c.i
+
+.PHONY : cpu/cpu.i
+
+# target to preprocess a source file
+cpu/cpu.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.i
+.PHONY : cpu/cpu.c.i
+
+cpu/cpu.s: cpu/cpu.c.s
+
+.PHONY : cpu/cpu.s
+
+# target to generate assembly for a file
+cpu/cpu.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.s
+.PHONY : cpu/cpu.c.s
+
+cpu/irq.obj: cpu/irq.c.obj
+
+.PHONY : cpu/irq.obj
+
+# target to build an object file
+cpu/irq.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj
+.PHONY : cpu/irq.c.obj
+
+cpu/irq.i: cpu/irq.c.i
+
+.PHONY : cpu/irq.i
+
+# target to preprocess a source file
+cpu/irq.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.i
+.PHONY : cpu/irq.c.i
+
+cpu/irq.s: cpu/irq.c.s
+
+.PHONY : cpu/irq.s
+
+# target to generate assembly for a file
+cpu/irq.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.s
+.PHONY : cpu/irq.c.s
+
+dev/console.obj: dev/console.c.obj
+
+.PHONY : dev/console.obj
+
+# target to build an object file
+dev/console.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj
+.PHONY : dev/console.c.obj
+
+dev/console.i: dev/console.c.i
+
+.PHONY : dev/console.i
+
+# target to preprocess a source file
+dev/console.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/console.c.i
+.PHONY : dev/console.c.i
+
+dev/console.s: dev/console.c.s
+
+.PHONY : dev/console.s
+
+# target to generate assembly for a file
+dev/console.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/console.c.s
+.PHONY : dev/console.c.s
+
+dev/time.obj: dev/time.c.obj
+
+.PHONY : dev/time.obj
+
+# target to build an object file
+dev/time.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj
+.PHONY : dev/time.c.obj
+
+dev/time.i: dev/time.c.i
+
+.PHONY : dev/time.i
+
+# target to preprocess a source file
+dev/time.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.i
+.PHONY : dev/time.c.i
+
+dev/time.s: dev/time.c.s
+
+.PHONY : dev/time.s
+
+# target to generate assembly for a file
+dev/time.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.s
+.PHONY : dev/time.c.s
+
+init/init.obj: init/init.c.obj
+
+.PHONY : init/init.obj
+
+# target to build an object file
+init/init.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.obj
+.PHONY : init/init.c.obj
+
+init/init.i: init/init.c.i
+
+.PHONY : init/init.i
+
+# target to preprocess a source file
+init/init.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.i
+.PHONY : init/init.c.i
+
+init/init.s: init/init.c.s
+
+.PHONY : init/init.s
+
+# target to generate assembly for a file
+init/init.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.s
+.PHONY : init/init.c.s
+
 init/start.obj: init/start.S.obj
 
 .PHONY : init/start.obj
@@ -133,6 +298,87 @@ init/start.obj: init/start.S.obj
 init/start.S.obj:
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/start.S.obj
 .PHONY : init/start.S.obj
+
+tools/klib.obj: tools/klib.c.obj
+
+.PHONY : tools/klib.obj
+
+# target to build an object file
+tools/klib.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj
+.PHONY : tools/klib.c.obj
+
+tools/klib.i: tools/klib.c.i
+
+.PHONY : tools/klib.i
+
+# target to preprocess a source file
+tools/klib.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.i
+.PHONY : tools/klib.c.i
+
+tools/klib.s: tools/klib.c.s
+
+.PHONY : tools/klib.s
+
+# target to generate assembly for a file
+tools/klib.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.s
+.PHONY : tools/klib.c.s
+
+tools/list.obj: tools/list.c.obj
+
+.PHONY : tools/list.obj
+
+# target to build an object file
+tools/list.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj
+.PHONY : tools/list.c.obj
+
+tools/list.i: tools/list.c.i
+
+.PHONY : tools/list.i
+
+# target to preprocess a source file
+tools/list.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.i
+.PHONY : tools/list.c.i
+
+tools/list.s: tools/list.c.s
+
+.PHONY : tools/list.s
+
+# target to generate assembly for a file
+tools/list.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.s
+.PHONY : tools/list.c.s
+
+tools/log.obj: tools/log.c.obj
+
+.PHONY : tools/log.obj
+
+# target to build an object file
+tools/log.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj
+.PHONY : tools/log.c.obj
+
+tools/log.i: tools/log.c.i
+
+.PHONY : tools/log.i
+
+# target to preprocess a source file
+tools/log.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.i
+.PHONY : tools/log.c.i
+
+tools/log.s: tools/log.c.s
+
+.PHONY : tools/log.s
+
+# target to generate assembly for a file
+tools/log.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.s
+.PHONY : tools/log.c.s
 
 # Help Target
 help:
@@ -143,7 +389,34 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... kernel"
+	@echo "... core/task.obj"
+	@echo "... core/task.i"
+	@echo "... core/task.s"
+	@echo "... cpu/cpu.obj"
+	@echo "... cpu/cpu.i"
+	@echo "... cpu/cpu.s"
+	@echo "... cpu/irq.obj"
+	@echo "... cpu/irq.i"
+	@echo "... cpu/irq.s"
+	@echo "... dev/console.obj"
+	@echo "... dev/console.i"
+	@echo "... dev/console.s"
+	@echo "... dev/time.obj"
+	@echo "... dev/time.i"
+	@echo "... dev/time.s"
+	@echo "... init/init.obj"
+	@echo "... init/init.i"
+	@echo "... init/init.s"
 	@echo "... init/start.obj"
+	@echo "... tools/klib.obj"
+	@echo "... tools/klib.i"
+	@echo "... tools/klib.s"
+	@echo "... tools/list.obj"
+	@echo "... tools/list.i"
+	@echo "... tools/list.s"
+	@echo "... tools/log.obj"
+	@echo "... tools/log.i"
+	@echo "... tools/log.s"
 .PHONY : help
 
 

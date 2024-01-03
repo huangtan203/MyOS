@@ -30,6 +30,7 @@ static uint32_t sys_tick;
 void do_handler_timer(exception_frame_t *frame){
     sys_tick++;
     pic_send_eoi(IRQ0_TIMER);
+    task_time_tick();
 }
 
 static void init_pit(void){

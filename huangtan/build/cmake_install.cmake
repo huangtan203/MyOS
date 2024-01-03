@@ -31,6 +31,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/boot/cmake_install.cmake")
   include("/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader/cmake_install.cmake")
+  include("/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel/cmake_install.cmake")
 
 endif()
 

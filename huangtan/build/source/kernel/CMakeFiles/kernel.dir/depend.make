@@ -4,3 +4,65 @@
 source/kernel/CMakeFiles/kernel.dir/init/start.S.obj: ../source/kernel/include/os_cfg.h
 source/kernel/CMakeFiles/kernel.dir/init/start.S.obj: ../source/kernel/init/start.S
 
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/include/core/task.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/include/cpu/cpu.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/include/cpu/irq.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/include/os_cfg.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/include/tools/klib.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/include/tools/list.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/include/tools/log.h
+source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/core/task.c
+
+source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.obj: ../source/kernel/include/cpu/cpu.h
+source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.obj: ../source/kernel/include/os_cfg.h
+source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.obj: ../source/kernel/cpu/cpu.c
+
+source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj: ../source/kernel/include/cpu/cpu.h
+source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj: ../source/kernel/include/cpu/irq.h
+source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj: ../source/kernel/include/os_cfg.h
+source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj: ../source/kernel/include/tools/log.h
+source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj: ../source/kernel/cpu/irq.c
+
+source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj: ../source/kernel/include/dev/console.h
+source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj: ../source/kernel/include/tools/klib.h
+source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj: ../source/kernel/dev/console.c
+
+source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/include/cpu/irq.h
+source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/include/dev/time.h
+source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/include/os_cfg.h
+source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/dev/time.c
+
+source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/comm/boot_info.h
+source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/kernel/include/cpu/cpu.h
+source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/kernel/include/cpu/irq.h
+source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/kernel/include/dev/time.h
+source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/kernel/include/os_cfg.h
+source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/kernel/init/init.c
+
+source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: ../source/kernel/include/tools/klib.h
+source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: ../source/kernel/tools/klib.c
+
+source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj: ../source/kernel/include/tools/list.h
+source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj: ../source/kernel/tools/list.c
+
+source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj: ../source/kernel/include/os_cfg.h
+source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj: ../source/kernel/include/tools/klib.h
+source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj: ../source/kernel/include/tools/log.h
+source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj: ../source/kernel/tools/log.c
+
