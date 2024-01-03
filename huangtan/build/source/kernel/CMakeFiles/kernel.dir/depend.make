@@ -51,6 +51,27 @@ source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/kernel/include/de
 source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/kernel/include/os_cfg.h
 source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/kernel/init/init.c
 
+source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: ../source/kernel/include/core/task.h
+source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: ../source/kernel/include/cpu/cpu.h
+source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: ../source/kernel/include/cpu/irq.h
+source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: ../source/kernel/include/ipc/mutex.h
+source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: ../source/kernel/include/tools/list.h
+source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: ../source/kernel/ipc/mutex.c
+
+source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: ../source/kernel/include/core/task.h
+source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: ../source/kernel/include/cpu/cpu.h
+source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: ../source/kernel/include/cpu/irq.h
+source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: ../source/kernel/include/ipc/sem.h
+source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: ../source/kernel/include/tools/list.h
+source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: ../source/kernel/ipc/sem.c
+
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj: ../source/kernel/include/tools/bitmap.h
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj: ../source/kernel/include/tools/klib.h
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj: ../source/kernel/tools/bitmap.c
+
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: ../source/comm/cpu_instr.h
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: ../source/comm/types.h
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: ../source/kernel/include/tools/klib.h

@@ -23,6 +23,7 @@ typedef struct _task_t{
     tss_t tss;
     uint16_t tss_sel;
     list_node_t run_node;
+    list_node_t wait_node;
     list_node_t all_node;
     int priority;
 }task_t;
