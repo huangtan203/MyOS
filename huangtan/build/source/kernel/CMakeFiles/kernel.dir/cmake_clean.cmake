@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/kernel.dir/cpu/cpu.c.obj"
   "CMakeFiles/kernel.dir/cpu/irq.c.obj"
   "CMakeFiles/kernel.dir/init/init.c.obj"
+  "CMakeFiles/kernel.dir/init/first_task.c.obj"
   "CMakeFiles/kernel.dir/dev/time.c.obj"
   "CMakeFiles/kernel.dir/dev/console.c.obj"
   "CMakeFiles/kernel.dir/ipc/mutex.c.obj"
@@ -12,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/kernel.dir/tools/klib.c.obj"
   "CMakeFiles/kernel.dir/tools/list.c.obj"
   "CMakeFiles/kernel.dir/core/task.c.obj"
+  "CMakeFiles/kernel.dir/core/memory.c.obj"
   "kernel.pdb"
   "kernel"
 )

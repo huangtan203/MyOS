@@ -148,9 +148,33 @@ source/kernel/CMakeFiles/kernel.dir/init/init.c.obj.provides: source/kernel/CMak
 source/kernel/CMakeFiles/kernel.dir/init/init.c.obj.provides.build: source/kernel/CMakeFiles/kernel.dir/init/init.c.obj
 
 
+source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
+source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj: ../source/kernel/init/first_task.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj"
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/init/first_task.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/first_task.c
+
+source/kernel/CMakeFiles/kernel.dir/init/first_task.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kernel.dir/init/first_task.c.i"
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/first_task.c > CMakeFiles/kernel.dir/init/first_task.c.i
+
+source/kernel/CMakeFiles/kernel.dir/init/first_task.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kernel.dir/init/first_task.c.s"
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/first_task.c -o CMakeFiles/kernel.dir/init/first_task.c.s
+
+source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj.requires:
+
+.PHONY : source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj.requires
+
+source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj.provides: source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj.requires
+	$(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj.provides.build
+.PHONY : source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj.provides
+
+source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj.provides.build: source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj
+
+
 source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/dev/time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/dev/time.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/time.c
 
 source/kernel/CMakeFiles/kernel.dir/dev/time.c.i: cmake_force
@@ -174,7 +198,7 @@ source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj.provides.build: source/kernel
 
 source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj: ../source/kernel/dev/console.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/dev/console.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/console.c
 
 source/kernel/CMakeFiles/kernel.dir/dev/console.c.i: cmake_force
@@ -198,7 +222,7 @@ source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj.provides.build: source/ker
 
 source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj: ../source/kernel/ipc/mutex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/ipc/mutex.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/ipc/mutex.c
 
 source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.i: cmake_force
@@ -222,7 +246,7 @@ source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj.provides.build: source/kerne
 
 source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj: ../source/kernel/ipc/sem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/ipc/sem.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/ipc/sem.c
 
 source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.i: cmake_force
@@ -246,7 +270,7 @@ source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.obj.provides.build: source/kernel/
 
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj: ../source/kernel/tools/log.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/tools/log.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/log.c
 
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.i: cmake_force
@@ -270,7 +294,7 @@ source/kernel/CMakeFiles/kernel.dir/tools/log.c.obj.provides.build: source/kerne
 
 source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj: ../source/kernel/tools/bitmap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/tools/bitmap.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/bitmap.c
 
 source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.i: cmake_force
@@ -294,7 +318,7 @@ source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj.provides.build: source/ke
 
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj: ../source/kernel/tools/klib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/tools/klib.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/klib.c
 
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.i: cmake_force
@@ -318,7 +342,7 @@ source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj.provides.build: source/kern
 
 source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj: ../source/kernel/tools/list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/tools/list.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/list.c
 
 source/kernel/CMakeFiles/kernel.dir/tools/list.c.i: cmake_force
@@ -342,7 +366,7 @@ source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj.provides.build: source/kern
 
 source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/core/task.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object source/kernel/CMakeFiles/kernel.dir/core/task.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object source/kernel/CMakeFiles/kernel.dir/core/task.c.obj"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/core/task.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/task.c
 
 source/kernel/CMakeFiles/kernel.dir/core/task.c.i: cmake_force
@@ -364,12 +388,37 @@ source/kernel/CMakeFiles/kernel.dir/core/task.c.obj.provides: source/kernel/CMak
 source/kernel/CMakeFiles/kernel.dir/core/task.c.obj.provides.build: source/kernel/CMakeFiles/kernel.dir/core/task.c.obj
 
 
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: source/kernel/CMakeFiles/kernel.dir/flags.make
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/core/memory.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj"
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/kernel.dir/core/memory.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/memory.c
+
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kernel.dir/core/memory.c.i"
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/memory.c > CMakeFiles/kernel.dir/core/memory.c.i
+
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kernel.dir/core/memory.c.s"
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && /usr/bin/gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/memory.c -o CMakeFiles/kernel.dir/core/memory.c.s
+
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj.requires:
+
+.PHONY : source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj.requires
+
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj.provides: source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj.requires
+	$(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj.provides.build
+.PHONY : source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj.provides
+
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj.provides.build: source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj
+
+
 # Object files for target kernel
 kernel_OBJECTS = \
 "CMakeFiles/kernel.dir/init/start.S.obj" \
 "CMakeFiles/kernel.dir/cpu/cpu.c.obj" \
 "CMakeFiles/kernel.dir/cpu/irq.c.obj" \
 "CMakeFiles/kernel.dir/init/init.c.obj" \
+"CMakeFiles/kernel.dir/init/first_task.c.obj" \
 "CMakeFiles/kernel.dir/dev/time.c.obj" \
 "CMakeFiles/kernel.dir/dev/console.c.obj" \
 "CMakeFiles/kernel.dir/ipc/mutex.c.obj" \
@@ -378,7 +427,8 @@ kernel_OBJECTS = \
 "CMakeFiles/kernel.dir/tools/bitmap.c.obj" \
 "CMakeFiles/kernel.dir/tools/klib.c.obj" \
 "CMakeFiles/kernel.dir/tools/list.c.obj" \
-"CMakeFiles/kernel.dir/core/task.c.obj"
+"CMakeFiles/kernel.dir/core/task.c.obj" \
+"CMakeFiles/kernel.dir/core/memory.c.obj"
 
 # External object files for target kernel
 kernel_EXTERNAL_OBJECTS =
@@ -387,6 +437,7 @@ source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/init/start.S.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/init/init.c.obj
+source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj
@@ -396,9 +447,10 @@ source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/core/task.c.obj
+source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/build.make
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C executable kernel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking C executable kernel"
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kernel.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && objcopy -S kernel.elf /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/../../image/kernel.elf
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel && objdump -x -d -S -m i386 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel/kernel.elf > kernel_dis.txt
@@ -413,6 +465,7 @@ source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.di
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.obj.requires
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.obj.requires
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/init/init.c.obj.requires
+source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj.requires
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj.requires
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/dev/console.c.obj.requires
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.obj.requires
@@ -422,6 +475,7 @@ source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.di
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/tools/klib.c.obj.requires
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/tools/list.c.obj.requires
 source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/core/task.c.obj.requires
+source/kernel/CMakeFiles/kernel.dir/requires: source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj.requires
 
 .PHONY : source/kernel/CMakeFiles/kernel.dir/requires
 

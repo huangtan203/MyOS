@@ -128,6 +128,33 @@ kernel/fast:
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/build
 .PHONY : kernel/fast
 
+core/memory.obj: core/memory.c.obj
+
+.PHONY : core/memory.obj
+
+# target to build an object file
+core/memory.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj
+.PHONY : core/memory.c.obj
+
+core/memory.i: core/memory.c.i
+
+.PHONY : core/memory.i
+
+# target to preprocess a source file
+core/memory.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.i
+.PHONY : core/memory.c.i
+
+core/memory.s: core/memory.c.s
+
+.PHONY : core/memory.s
+
+# target to generate assembly for a file
+core/memory.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.s
+.PHONY : core/memory.c.s
+
 core/task.obj: core/task.c.obj
 
 .PHONY : core/task.obj
@@ -262,6 +289,33 @@ dev/time.s: dev/time.c.s
 dev/time.c.s:
 	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.s
 .PHONY : dev/time.c.s
+
+init/first_task.obj: init/first_task.c.obj
+
+.PHONY : init/first_task.obj
+
+# target to build an object file
+init/first_task.c.obj:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj
+.PHONY : init/first_task.c.obj
+
+init/first_task.i: init/first_task.c.i
+
+.PHONY : init/first_task.i
+
+# target to preprocess a source file
+init/first_task.c.i:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.i
+.PHONY : init/first_task.c.i
+
+init/first_task.s: init/first_task.c.s
+
+.PHONY : init/first_task.s
+
+# target to generate assembly for a file
+init/first_task.c.s:
+	cd /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.s
+.PHONY : init/first_task.c.s
 
 init/init.obj: init/init.c.obj
 
@@ -470,6 +524,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... kernel"
+	@echo "... core/memory.obj"
+	@echo "... core/memory.i"
+	@echo "... core/memory.s"
 	@echo "... core/task.obj"
 	@echo "... core/task.i"
 	@echo "... core/task.s"
@@ -485,6 +542,9 @@ help:
 	@echo "... dev/time.obj"
 	@echo "... dev/time.i"
 	@echo "... dev/time.s"
+	@echo "... init/first_task.obj"
+	@echo "... init/first_task.i"
+	@echo "... init/first_task.s"
 	@echo "... init/init.obj"
 	@echo "... init/init.i"
 	@echo "... init/init.s"

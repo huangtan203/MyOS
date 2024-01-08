@@ -16,6 +16,14 @@ types.h
 
 ../source/comm/types.h
 
+../source/kernel/include/core/memory.h
+tools/bitmap.h
+../source/kernel/include/core/tools/bitmap.h
+comm/boot_info.h
+../source/kernel/include/core/comm/boot_info.h
+ipc/mutex.h
+../source/kernel/include/core/ipc/mutex.h
+
 ../source/kernel/include/core/task.h
 comm/types.h
 ../source/kernel/include/core/comm/types.h
@@ -66,6 +74,16 @@ stdarg.h
 
 ../source/kernel/include/tools/log.h
 
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/memory.c
+tools/klib.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/tools/klib.h
+tools/log.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/tools/log.h
+core/memory.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/core/memory.h
+../cpu/mmu.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/mmu.h
+
 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/task.c
 comm/cpu_instr.h
 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/comm/cpu_instr.h
@@ -100,6 +118,12 @@ tools/log.h
 os_cfg.h
 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/os_cfg.h
 
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/mmu.h
+comm/types.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/comm/types.h
+comm/cpu_instr.h
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/comm/cpu_instr.h
+
 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/console.c
 dev/console.h
 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/dev/console.h
@@ -117,6 +141,8 @@ comm/cpu_instr.h
 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/comm/cpu_instr.h
 os_cfg.h
 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/os_cfg.h
+
+/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/first_task.c
 
 /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/init.c
 comm/boot_info.h

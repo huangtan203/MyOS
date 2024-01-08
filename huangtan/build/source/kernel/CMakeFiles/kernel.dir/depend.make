@@ -4,6 +4,20 @@
 source/kernel/CMakeFiles/kernel.dir/init/start.S.obj: ../source/kernel/include/os_cfg.h
 source/kernel/CMakeFiles/kernel.dir/init/start.S.obj: ../source/kernel/init/start.S
 
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/comm/boot_info.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/comm/cpu_instr.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/comm/types.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/include/core/memory.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/include/core/task.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/include/cpu/cpu.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/include/ipc/mutex.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/include/tools/bitmap.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/include/tools/klib.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/include/tools/list.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/include/tools/log.h
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/core/memory.c
+source/kernel/CMakeFiles/kernel.dir/core/memory.c.obj: ../source/kernel/cpu/mmu.h
+
 source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/comm/cpu_instr.h
 source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/comm/types.h
 source/kernel/CMakeFiles/kernel.dir/core/task.c.obj: ../source/kernel/include/core/task.h
@@ -41,6 +55,8 @@ source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/include/cpu
 source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/include/dev/time.h
 source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/include/os_cfg.h
 source/kernel/CMakeFiles/kernel.dir/dev/time.c.obj: ../source/kernel/dev/time.c
+
+source/kernel/CMakeFiles/kernel.dir/init/first_task.c.obj: ../source/kernel/init/first_task.c
 
 source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/comm/boot_info.h
 source/kernel/CMakeFiles/kernel.dir/init/init.c.obj: ../source/comm/cpu_instr.h

@@ -1,9 +1,9 @@
 #include "tools/klib.h"
 #include  "tools/log.h"
 #include "core/memory.h"
-#include "cpu/mmu.h"
+#include "../cpu/mmu.h"
 static addr_alloc_t paddr_alloc;
-static pde_t kernel_page_dir[PDE_CNT] __attribute__((aligned(PAGE_SIZE)));
+static pde_t kernel_page_dir[PDE_CNT] __attribute__((aligned(MEM_PAGE_SIZE)));
 static pde_t*current_page_dir(void){
     return (pde_t*)task_current()->tss.cr3;
 }
@@ -32,7 +32,7 @@ static void addr_free_page(addr_alloc_t*alloc,uint32_t addr,int page_count){
     mutex_unlock(&alloc->mutex);
 }
 
-static void show_mem_info(boot_info_t boot_info){
+static void show_mem_info(boot_info_t *boot_info){
     log_printf("mem region:");
     for(int i=0;i<boot_info->ram_region_count;i++){
         log_printf("start:%x,size:%x",boot_info->ram_region_cfg[i].start,
@@ -40,7 +40,7 @@ static void show_mem_info(boot_info_t boot_info){
     }
     log_printf("\n");
 }
-static uint32_t total_mem_size(boot_info_t boot_info){
+static uint32_t total_mem_size(boot_info_t *boot_info){
     uint32_t mem_size=0;
     for(int i=0;i<boot_info->ram_region_count;i++){
         mem_size+=boot_info->ram_region_cfg[i].size;
@@ -98,7 +98,17 @@ void create_kernel_table(void){
     }
 }
 void memory_init(boot_info_t*boot_info){
-
+    extern uint8_t*mem_free_start;
+    log_printf("mem init.");
+    show_mem_info(boot_info);
+    uint8_t* mem_free=(uint8_t*)&mem_free_start;
+    uint32_t mem_up1MB_free=total_mem_size(boot_info)-MEM_EBDA_START;
+    mem_up1MB_free=down2(mem_up1MB_free,MEM_PAGE_SIZE);
+    log_printf("free memory...");
+    addr_alloc_init(&paddr_alloc,mem_free,MEM_EXT_START,mem_up1MB_free, MEM_PAGE_SIZE);
+    mem_free+=bitmap_byte_count(paddr_alloc.size/MEM_PAGE_SIZE);
+    create_kernel_table();
+    mmu_set_page_dir((uint32_t)kernel_page_dir);
 }
 uint32_t memory_create_uvm(void){
     //创建用户进程的页表
@@ -114,22 +124,77 @@ uint32_t memory_create_uvm(void){
     return (uint32_t)page_dir;
 }
 uint32_t memory_alloc_for_page_dir(uint32_t page_dir,uint32_t vaddr,uint32_t size,int perm){
-
+    uint32_t curr_addr=vaddr;
+    int page_count=up2(size,MEM_PAGE_SIZE)/MEM_PAGE_SIZE;
+    vaddr=down2(vaddr,MEM_PAGE_SIZE);
+    for(int i=0;i<page_count;i++){
+        uint32_t paddr=addr_alloc_page(&paddr_alloc,1);
+        if(paddr==0){
+            log_printf("mem alloc failed...no memory");
+            return 0;
+        }
+        int err=memory_create_map((pde_t*)page_dir,curr_addr,paddr,1,perm);
+        if(err<0){
+            log_printf("mem alloc failed...no memory");
+            addr_free_page(&paddr_alloc,vaddr,i+1);
+            return -1;
+        }
+        curr_addr+=MEM_PAGE_SIZE;
+    }
+    return 0;
 }
 int memory_alloc_page_for(uint32_t addr,uint32_t size,int perm){
-
+    return memory_alloc_for_page_dir(task_current()->tss.cr3,addr,size,perm);
 }
 uint32_t memory_alloc_page(void){
-
+    return addr_alloc_page(&paddr_alloc,1);
 }
 void memory_free_page(uint32_t addr){
-
+    if(addr<MEMORY_TASK_BASE){
+        addr_free_page(&paddr_alloc,addr,1);
+    }else{
+        pte_t*pte=find_pte(current_page_dir(),addr,0);
+        addr_free_page(&paddr_alloc,pte_paddr(pte),1);
+        pte->v=0;
+    }
 }
 void memory_destroy_uvm(uint32_t page_dir){
 
 }
 uint32_t memory_copy_uvm(uint32_t page_dir){
-
+    uint32_t to_page_dir=memory_create_uvm();
+    if(to_page_dir==0){
+        goto copy_uvm_failed;
+    }
+    uint32_t user_pde_start=pde_index(MEMORY_TASK_BASE);
+    pde_t*pde=(pde_t*)page_dir+user_pde_start;
+    for(int i=user_pde_start;i<PDE_CNT;i++,pde++){
+        if(!pde->present){
+            continue;
+        }
+        pte_t*pte=(pte_t*)pde_paddr(pde);
+        for(int j=0;j<PTE_CNT;j++,pte++){
+            if(!pte->present){
+                continue;
+            }
+            uint32_t page=addr_alloc_page(&paddr_alloc,1);
+            if(page==0){
+                goto copy_uvm_failed;
+            }
+            uint32_t vaddr=(i<<22)|(j<<12);
+            int err=memory_create_map((pde_t*)to_page_dir,vaddr,page,1,get_pte_perm(pte));
+            if(err<0){
+                goto copy_uvm_failed;
+            }
+            kernel_memcpy((void*)page,(void*)vaddr,MEM_PAGE_SIZE);
+        }
+    }
+    return to_page_dir;
+copy_uvm_failed:
+    if(to_page_dir){
+        memory_destroy_uvm(to_page_dir);
+    }
+    return -1;
 }
 uint32_t memory_get_paddr(uint32_t page_dir,uint32_t vaddr){
     pte_t*pte=find_pte(page_dir,vaddr,0);
