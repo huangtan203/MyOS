@@ -12,6 +12,8 @@
         "_default_fcntl.h": "c",
         "loader.h": "c",
         "cpu_instr.h": "c",
-        "log.h": "c"
+        "log.h": "c",
+        "sem.h": "c",
+        "list.h": "c"
     },
 }
