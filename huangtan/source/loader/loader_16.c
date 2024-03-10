@@ -112,7 +112,7 @@ static void detece_momery(void){
             break;
         }
     }
-    show_msg("done.\r\n");
+    show_msg("huang tan OS done.\r\n");
     //show_msg("RAM regions: %d\r\n",boot_info.ram_region_count);
 }
 uint16_t gdt_table[][4]={

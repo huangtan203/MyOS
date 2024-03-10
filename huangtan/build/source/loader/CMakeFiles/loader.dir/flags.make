@@ -7,11 +7,11 @@ ASM_FLAGS = -m32 -g -g
 
 ASM_DEFINES = 
 
-ASM_INCLUDES = -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include 
+ASM_INCLUDES = -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source 
 
 C_FLAGS = -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g  
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include 
+C_INCLUDES = -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source 
 

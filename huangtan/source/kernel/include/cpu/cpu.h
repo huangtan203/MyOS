@@ -6,7 +6,7 @@
 #define SEG_D				(1 << 14)		// 控制是否是32位、16位的代码或数据段
 #define SEG_P_PRESENT	    (1 << 7)		// 段是否存在
 
-#define SEG_DPL0			(0 << 5)		// 特权级0，最高特权级
+#define SEG_DPL0			(0 << 5)	    // 特权级0，最高特权级
 #define SEG_DPL3			(3 << 5)		// 特权级3，最低权限
 
 #define SEG_S_SYSTEM		(0 << 4)		// 是否是系统段，如调用门或者中断
@@ -57,5 +57,5 @@ typedef struct _tss_t{
 #pragma pack()
 void cpu_init(void);
 void segment_desc_set(int selector, uint32_t base, uint32_t limit, uint8_t attr);
-void gate_desc_set(gate_desc_t*desc, uint32_t offset, uint16_t selector, uint8_t attr);
+void gate_desc_set(gate_desc_t*desc,  uint16_t selector,uint32_t offset, uint8_t attr);
 #endif

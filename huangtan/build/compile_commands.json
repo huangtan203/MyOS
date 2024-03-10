@@ -1,87 +1,17 @@
 [
 {
   "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/boot",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/boot.dir/boot.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c",
+  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/boot.dir/boot.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c",
   "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/boot/boot.c"
 },
 {
   "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_16.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_16.c",
+  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_16.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_16.c",
   "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_16.c"
 },
 {
   "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_32.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_32.c",
+  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_32.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_32.c",
   "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_32.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/cpu/cpu.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/cpu.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/cpu.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/cpu/irq.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/irq.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/cpu/irq.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/init/init.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/init.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/init.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/init/first_task.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/first_task.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/init/first_task.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/dev/time.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/time.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/time.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/dev/console.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/console.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/dev/console.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/ipc/mutex.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/ipc/mutex.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/ipc/mutex.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/ipc/sem.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/ipc/sem.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/ipc/sem.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/log.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/log.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/log.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/bitmap.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/bitmap.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/bitmap.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/klib.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/klib.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/klib.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/list.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/list.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/tools/list.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/core/task.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/task.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/task.c"
-},
-{
-  "directory": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/kernel",
-  "command": "/usr/bin/gcc   -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source -I/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/core/memory.c.obj   -c /home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/memory.c",
-  "file": "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/kernel/core/memory.c"
 }
 ]

@@ -139,19 +139,6 @@ loader/fast:
 	$(MAKE) -f source/loader/CMakeFiles/loader.dir/build.make source/loader/CMakeFiles/loader.dir/build
 .PHONY : loader/fast
 
-#=============================================================================
-# Target rules for targets named kernel
-
-# Build rule for target.
-kernel: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 kernel
-.PHONY : kernel
-
-# fast build rule for target.
-kernel/fast:
-	$(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/build
-.PHONY : kernel/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,7 +149,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... boot"
 	@echo "... loader"
-	@echo "... kernel"
 .PHONY : help
 
 

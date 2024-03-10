@@ -12,7 +12,6 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../source"
-  "../source/kernel/include"
   )
 set(CMAKE_DEPENDS_CHECK_C
   "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/source/loader/loader_16.c" "/home/ziya/huangtan/lab/os/os_leenux/diy-x86os/code/huangtan/build/source/loader/CMakeFiles/loader.dir/loader_16.c.obj"
@@ -23,7 +22,6 @@ set(CMAKE_C_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../source"
-  "../source/kernel/include"
   )
 
 # Targets to which this target links.
